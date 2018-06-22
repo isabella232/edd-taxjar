@@ -14,3 +14,9 @@ By allowing TaxJar to handle tax rate determination, store owners can rest easy 
 5. Enter your TaxJar API token
 
 All sales taxes will now be calculated automatically based on the zip/postal code and billing country entered on checkout.
+
+### Notes
+
+In order for the tax rate calculation to occur, your checkout screen must include the billing zip / postal field. If that field is not present on your checkout screen, no tax rate determination can be performed.
+
+At this time this plugin only calculates the tax rate, it does not create order records in your TaxJar acccount, but we will add support for that soon. In the mean time, you can export your order history from Downloads > Reports > Export and then import it into TaxJar after the end of each month.
