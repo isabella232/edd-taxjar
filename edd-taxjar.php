@@ -25,6 +25,7 @@ class EDD_TaxJar {
 		add_filter( 'edd_settings_sections_taxes', array( $this, 'subsection' ), 10, 1 );
 		add_filter( 'edd_settings_taxes',          array( $this, 'settings' ) );
 		add_filter( 'edd_tax_rate',                array( $this, 'get_tax_rate' ) );
+		add_action( 'edd_payment_saved',           array( $this, 'store_taxjar_data_on_payment' ), 10, 2 );
 
 		$this->load_sdk();
 	}
@@ -110,12 +111,25 @@ class EDD_TaxJar {
 
 			if( ! empty( $rates->combined_rate ) ) {
 
+				EDD()->session->set( 'taxjar', json_encode( $rates ) );
+
 				return $rates->combined_rate;
 	
 			}
 		}
 
 		return $rate;
+	}
+
+	public function store_taxjar_data_on_payment( $payment_id, $payment ) {
+
+		$tax_data = EDD()->session->get( 'taxjar' );
+
+		if( $tax_data ) {
+			$payment->add_meta( 'edd_taxjar_data', $tax_data );
+			EDD()->session->set( 'taxjar', null );
+		}
+
 	}
 }
 
