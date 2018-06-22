@@ -105,17 +105,27 @@ class EDD_TaxJar {
 
 			$zip     = isset( $_POST['card_zip'] )        ? sanitize_text_field( $_POST['card_zip'] )        : '';
 			$country = isset( $_POST['billing_country'] ) ? sanitize_text_field( $_POST['billing_country'] ) : '';
-			$rates = $this->api->ratesForLocation( $zip, array(
-				'country' => $country,
-			) );
 
-			if( ! empty( $rates->combined_rate ) ) {
+			try {
 
-				EDD()->session->set( 'taxjar', json_encode( $rates ) );
+				$rates = $this->api->ratesForLocation( $zip, array(
+					'country' => $country,
+				) );
 
-				return $rates->combined_rate;
-	
+				if( ! empty( $rates->combined_rate ) ) {
+
+					EDD()->session->set( 'taxjar', json_encode( $rates ) );
+
+					return $rates->combined_rate;
+
+				}
+
+			} catch ( Exception $e ) {
+
+				edd_debug_log( 'TaxJar API Exception: ' . $e->getMessage() );
+
 			}
+
 		}
 
 		return $rate;
