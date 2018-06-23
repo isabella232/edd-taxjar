@@ -11,7 +11,7 @@ By allowing TaxJar to handle tax rate determination, store owners can rest easy 
 3. Install this plugin and activate it by uploading it via Plugins > Add New
 4. Navigate to Downloads > Settings > Taxes and enable taxes
 5. Navigate to Downloads > Settings > Taxes > Tax Jar
-5. Enter your TaxJar API token
+6. Enter your TaxJar API token
 
 All sales taxes will now be calculated automatically based on the zip/postal code and billing country entered on checkout.
 
