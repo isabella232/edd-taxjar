@@ -82,8 +82,11 @@ class EDD_TaxJar {
 			$taxjar_settings = array( 'taxjar' => $taxjar_settings );
 		}
 
+		$settings = array_merge( $settings, $taxjar_settings );
 
-		return array_merge( $settings, $taxjar_settings );
+		$settings[ 'main' ][ 'tax_rates' ][ 'desc' ] = $settings[ 'main' ][ 'tax_rates' ][ 'desc' ] . ' ' . __( '<strong>Note</strong>: with TaxJar enabled, all tax rates are calculated automatically for supported countries. For countries not supported by TaxJar, the rates below will be used if applicable.', 'edd-taxjar' );
+
+		return $settings;
 
 	}
 
