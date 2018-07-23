@@ -3,7 +3,7 @@
 Plugin Name: Easy Digital Downloads - TaxJar
 Plugin URI: https://easydigitaldownloads.com/extensions/taxjar
 Description: Calculate sales tax through automatically TaxJar.com
-Version: 1.0
+Version: 1.0.1
 Author: Easy Digital Downloads
 Author URI: https://easydigitaldownloads.com
 */

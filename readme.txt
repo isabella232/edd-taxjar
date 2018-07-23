@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: easy digital downloads, digital download, edd, e-commerce, tax, taxjar
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ In order for the tax rate calculation to occur, your checkout screen must includ
 At this time this plugin only calculates the tax rate, it does not create order records in your TaxJar acccount, but we will add support for that soon. In the mean time, you can export your order history from Downloads > Reports > Export and then import it into TaxJar after the end of each month.
 
 == Changelog ==
+
+= 1.0.1, July 23, 2018 =
+
+* Fix: Undefined PHP notice in upcoming Easy Digital Downloads 3.0 version
 
 = 1.0, June 22, 2018 =
 
