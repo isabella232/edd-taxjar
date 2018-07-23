@@ -83,8 +83,8 @@ class EDD_TaxJar {
 		}
 
 		$settings = array_merge( $settings, $taxjar_settings );
-
-		$settings[ 'main' ][ 'tax_rates' ][ 'desc' ] = $settings[ 'main' ][ 'tax_rates' ][ 'desc' ] . ' ' . __( '<strong>Note</strong>: with TaxJar enabled, all tax rates are calculated automatically for supported countries. For countries not supported by TaxJar, the rates below will be used if applicable.', 'edd-taxjar' );
+		$settings[ 'main' ][ 'enable_taxes' ][ 'desc' ] = $settings[ 'main' ][ 'enable_taxes' ][ 'desc' ] . ' ' . __( '<strong>Note</strong>: with TaxJar enabled, all tax rates are calculated automatically for supported countries. For countries not supported by TaxJar, the rates below will be used if applicable.', 'edd-taxjar' );
+		$settings[ 'rates' ][ 'tax_rates' ][ 'desc' ] = $settings[ 'main' ][ 'enable_taxes' ][ 'desc' ];
 
 		return $settings;
 
@@ -128,9 +128,9 @@ class EDD_TaxJar {
 				if( ! empty( $rates->combined_rate ) ) {
 
 					$edd_taxjar = $rates;
-				
+
 					EDD()->session->set( 'taxjar', json_encode( $rates ) );
-				
+
 					edd_debug_log( 'TaxJar API Response: ' . var_export( $rates, true ) );
 
 					return $rates->combined_rate;
