@@ -18,8 +18,8 @@ class EDD_TaxJar {
 	/**
 	 * The API token from Tax Jar.
 	 *
-	 * @since  1.0.0
-	 * @var string
+	 * @since 1.0.0
+	 * @var   string
 	 */
 	private $api_token;
 
@@ -27,15 +27,15 @@ class EDD_TaxJar {
 	 * API variable.
 	 *
 	 * @since  1.0.0
-	 * @var string
-	 * @return  void
+	 * @var    string
+	 * @return void
 	 */
 	private $api;
 
 	/**
 	 * Get things started
 	 *
-	 * @since   1.0.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 
@@ -57,8 +57,8 @@ class EDD_TaxJar {
 	/**
 	 * Set up the text domains for translation.
 	 *
-	 * @since   1.0.0
-	 * @return  void
+	 * @since  1.0.0
+	 * @return void
 	 */
 	public function textdomain() {
 
@@ -88,9 +88,9 @@ class EDD_TaxJar {
 	/**
 	 * Create a subsection for the nax in EDD settings.
 	 *
-	 * @since   1.0.0
-	 * @param   array $sections The subsections currently in this settings section.
-	 * @return  array $sections The modified subsections currently in this settings section.
+	 * @since  1.0.0
+	 * @param  array $sections The subsections currently in this settings section.
+	 * @return array $sections The modified subsections currently in this settings section.
 	 */
 	public function subsection( $sections ) {
 		$sections['taxjar'] = __( 'TaxJar', 'edd-taxjar' );
@@ -100,9 +100,9 @@ class EDD_TaxJar {
 	/**
 	 * Add the settings for Tax Jar to the settings array in EDD core.
 	 *
-	 * @since   1.0.0
-	 * @param   array $settings The settings currently in this settings section.
-	 * @return  array $settings The settings currently in this settings section.
+	 * @since  1.0.0
+	 * @param  array $settings The settings currently in this settings section.
+	 * @return array $settings The settings currently in this settings section.
 	 */
 	public function settings( $settings ) {
 
@@ -137,8 +137,8 @@ class EDD_TaxJar {
 	/**
 	 * Load the Tax Jar SDK.
 	 *
-	 * @since   1.0.0
-	 * @return  void
+	 * @since  1.0.0
+	 * @return void
 	 */
 	private function load_sdk() {
 
@@ -155,11 +155,11 @@ class EDD_TaxJar {
 	/**
 	 * This function filters to the edd_tax_rate filter to override the tax rate with the one from Tax Jar.
 	 *
-	 * @since 1.0.0
-	 * @param int    $rate The tax rate.
-	 * @param string $country The country for the tax rate.
-	 * @param string $state The state for the tax rate.
-	 * @return  int The tax rate.
+	 * @since  1.0.0
+	 * @param  int    $rate The tax rate.
+	 * @param  string $country The country for the tax rate.
+	 * @param  string $state The state for the tax rate.
+	 * @return int    The tax rate.
 	 */
 	public function get_tax_rate( $rate = 0, $country = false, $state = false ) {
 
@@ -214,9 +214,9 @@ class EDD_TaxJar {
 	/**
 	 * When a payment is saved, save the tax jar information about the tax rate to the payment's meta.
 	 *
-	 * @since 1.0.0
-	 * @param int         $payment_id The ID of the payment on which to store the tax jar data.
-	 * @param EDD_Payment $payment The EDD Payment object.
+	 * @since  1.0.0
+	 * @param  int         $payment_id The ID of the payment on which to store the tax jar data.
+	 * @param  EDD_Payment $payment The EDD Payment object.
 	 * @return void
 	 */
 	public function store_taxjar_data_on_payment( $payment_id, $payment ) {
@@ -234,7 +234,7 @@ class EDD_TaxJar {
 /**
  * Get the tax jar class running.
  *
- * @since 1.0.0
+ * @since  1.0.0
  * @return void
  */
 function edd_taxjar_init() {
