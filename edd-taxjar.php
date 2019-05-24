@@ -109,7 +109,10 @@ class EDD_TaxJar {
 		if( ! empty( $_POST['card_zip'] ) ) {
 
 			$zip     = isset( $_POST['card_zip'] )        ? sanitize_text_field( $_POST['card_zip'] )        : '';
+			$zip = apply_filters( 'edd_tax_jar_zip', $zip, $country, $state, $rate );
+
 			$country = isset( $_POST['billing_country'] ) ? sanitize_text_field( $_POST['billing_country'] ) : '';
+			$country = apply_filters( 'edd_tax_jar_country', $country, $zip, $state, $rate );
 
 			if( ! empty( $edd_taxjar ) ) {
 
