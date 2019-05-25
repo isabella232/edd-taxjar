@@ -106,17 +106,19 @@ class EDD_TaxJar {
 
 		global $edd_taxjar;
 
-		if( ! empty( $_POST['card_zip'] ) ) {
+		if ( ! empty( $_POST['card_zip'] ) ) {
 
-			$zip     = isset( $_POST['card_zip'] )        ? sanitize_text_field( $_POST['card_zip'] )        : '';
-			$country = isset( $_POST['billing_country'] ) ? sanitize_text_field( $_POST['billing_country'] ) : '';
+			$zip = isset( $_POST['card_zip'] ) ? sanitize_text_field( wp_unslash( $_POST['card_zip'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+			$zip = apply_filters( 'edd_tax_jar_zip', $zip, $country, $state, $rate );
 
-			if( ! empty( $edd_taxjar ) ) {
+			$country = isset( $_POST['billing_country'] ) ? sanitize_text_field( wp_unslash( $_POST['billing_country'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+			$country = apply_filters( 'edd_tax_jar_country', $country, $zip, $state, $rate );
 
-				if( $zip == $edd_taxjar->zip && $country == $edd_taxjar->country ) {
+			if ( ! empty( $edd_taxjar ) ) {
+
+				if ( $zip === $edd_taxjar->zip && $country === $edd_taxjar->country ) {
 					return $edd_taxjar->combined_rate;
 				}
-
 			}
 
 			try {
