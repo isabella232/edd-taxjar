@@ -221,10 +221,18 @@ class EDD_TaxJar {
 	 */
 	public function store_taxjar_data_on_payment( $payment_id, $payment ) {
 
+		if ( empty( $this->api_token ) ) {
+			return;
+		}
+
 		$tax_data = EDD()->session->get( 'taxjar' );
 
 		if ( $tax_data ) {
-			$payment->add_meta( 'edd_taxjar_data', $tax_data );
+			if ( function_exists( 'edd_add_order_meta' ) ) {
+				edd_add_order_meta( $payment_id, 'tax_rate', $tax_data );
+			} else {
+				$payment->add_meta( 'edd_taxjar_data', $tax_data );
+			}
 			EDD()->session->set( 'taxjar', null );
 		}
 
