@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Digital Downloads - TaxJar
-Plugin URI: https://easydigitaldownloads.com/extensions/taxjar
+Plugin URI: https://wordpress.org/plugins/edd-taxjar/
 Description: Calculate sales tax through automatically TaxJar.com
 Version: 1.0.1
-Author: Easy Digital Downloads
-Author URI: https://easydigitaldownloads.com
+Author: Sandhills Development, LLC
+Author URI: https://sandhillsdev.com
 */
 
 /**
@@ -16,7 +16,7 @@ Author URI: https://easydigitaldownloads.com
 class EDD_TaxJar {
 
 	/**
-	 * The API token from Tax Jar.
+	 * The API token from TaxJar.
 	 *
 	 * @since 1.0.0
 	 * @var   string
@@ -98,7 +98,7 @@ class EDD_TaxJar {
 	}
 
 	/**
-	 * Add the settings for Tax Jar to the settings array in EDD core.
+	 * Add the settings for TaxJar to the settings array in EDD core.
 	 *
 	 * @since  1.0.0
 	 * @param  array $settings The settings currently in this settings section.
@@ -135,7 +135,7 @@ class EDD_TaxJar {
 	}
 
 	/**
-	 * Load the Tax Jar SDK.
+	 * Load the TaxJar SDK.
 	 *
 	 * @since  1.0.0
 	 * @return void
@@ -153,7 +153,7 @@ class EDD_TaxJar {
 	}
 
 	/**
-	 * This function filters to the edd_tax_rate filter to override the tax rate with the one from Tax Jar.
+	 * This function filters to the edd_tax_rate filter to override the tax rate with the one from TaxJar.
 	 *
 	 * @since  1.0.0
 	 * @param  int    $rate The tax rate.
@@ -212,10 +212,10 @@ class EDD_TaxJar {
 	}
 
 	/**
-	 * When a payment is saved, save the tax jar information about the tax rate to the payment's meta.
+	 * When a payment is saved, save the TaxJar information about the tax rate to the payment's meta.
 	 *
 	 * @since  1.0.0
-	 * @param  int         $payment_id The ID of the payment on which to store the tax jar data.
+	 * @param  int         $payment_id The ID of the payment on which to store the TaxJar data.
 	 * @param  EDD_Payment $payment The EDD Payment object.
 	 * @return void
 	 */
@@ -232,7 +232,7 @@ class EDD_TaxJar {
 }
 
 /**
- * Get the tax jar class running.
+ * Get the TaxJar class running.
  *
  * @since  1.0.0
  * @return void
