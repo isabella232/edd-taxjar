@@ -229,7 +229,7 @@ class EDD_TaxJar {
 
 		if ( $tax_data ) {
 			if ( function_exists( 'edd_add_order_meta' ) ) {
-				edd_add_order_meta( $payment_id, 'tax_rate', $tax_data );
+				edd_add_order_meta( $payment_id, 'edd_taxjar_data', $tax_data );
 			} else {
 				$payment->add_meta( 'edd_taxjar_data', $tax_data );
 			}
