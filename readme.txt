@@ -4,7 +4,7 @@ Donate link: https://easydigitaldownloads.com/donate/
 Tags: easy digital downloads, digital download, edd, e-commerce, tax, taxjar
 Requires at least: 4.5
 Tested up to: 5.7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,13 @@ In order for the tax rate calculation to occur, your checkout screen must includ
 At this time this plugin only calculates the tax rate; it does not create order records in your TaxJar account, but we will add support for that soon. In the meantime, you can export your order history from Downloads > Reports > Export and then import it into TaxJar after the end of each month.
 
 == Changelog ==
+
+= 1.0.2, March 23, 2021 =
+
+* New: Added filters for the zip code (`edd_tax_jar_zip`) and country (`edd_tax_jar_country`).
+* Tweak: Update plugin author name and URI.
+* Dev: Support for EDD 3.0.
+* Dev: Code cleanup for WPCS.
 
 = 1.0.1, July 23, 2018 =
 
