@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Easy Digital Downloads - TaxJar
  * Plugin URI: https://wordpress.org/plugins/edd-taxjar/
- * Description: Calculate sales tax through automatically TaxJar.com
+ * Description: Calculate sales tax automatically through TaxJar.com
  * Version: 1.0.2
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
