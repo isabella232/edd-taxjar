@@ -194,7 +194,8 @@ class EDD_TaxJar {
 
 					$edd_taxjar = $rates;
 
-					EDD()->session->set( 'taxjar', wp_json_encode( $rates ) );
+					// Note: `EDD()->session->set()` will run this through `wp_json_encode()` for us.
+					EDD()->session->set( 'taxjar', (array) $rates );
 
 					edd_debug_log( 'TaxJar API Response: ' . var_export( $rates, true ) ); //phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
 
@@ -228,6 +229,11 @@ class EDD_TaxJar {
 		$tax_data = EDD()->session->get( 'taxjar' );
 
 		if ( $tax_data ) {
+			// `EDD()->session->get()` will have decoded it for us, but we actually want to save it as JSON.
+			if ( is_array( $tax_data ) ) {
+				$tax_data = wp_json_encode( $tax_data );
+			}
+
 			if ( function_exists( 'edd_add_order_meta' ) ) {
 				edd_add_order_meta( $payment_id, 'edd_taxjar_data', $tax_data );
 			} else {
