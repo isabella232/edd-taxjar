@@ -36,6 +36,7 @@ At this time this plugin only calculates the tax rate; it does not create order 
 = 1.0.2, March 23, 2021 =
 
 * New: Added filters for the zip code (`edd_tax_jar_zip`) and country (`edd_tax_jar_country`).
+* Fix: `edd_taxjar_data` payment meta not being saved as valid JSON.
 * Tweak: Update plugin author name and URI.
 * Dev: Support for EDD 3.0.
 * Dev: Code cleanup for WPCS.
