@@ -1,10 +1,10 @@
 === EDD TaxJar ===
 Contributors: easydigitaldownloads, mordauk
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EFUPMPEZPGW7L
+Donate link: https://easydigitaldownloads.com/donate/
 Tags: easy digital downloads, digital download, edd, e-commerce, tax, taxjar
 Requires at least: 4.5
-Tested up to: 4.9
-Stable tag: 1.0.1
+Tested up to: 5.7
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Automatically calculate sales tax in Easy Digital Downloads with TaxJar.
 
 == Description ==
 
-This plugin connects Easy Digital Downloads to [TaxJar.com](https://taxjar.com) so that all tax rate calculations are donen by TaxJar.
+This plugin connects Easy Digital Downloads to [TaxJar.com](https://taxjar.com) so that all tax rate calculations are done by TaxJar.
 
 By allowing TaxJar to handle tax rate determination, store owners can rest easy with accurate, up to date tax rate calculations without requiring any extensive manual entry for tax rates.
 
@@ -22,16 +22,24 @@ By allowing TaxJar to handle tax rate determination, store owners can rest easy 
 2. Obtain an API Token from your account area
 3. Install this plugin and activate it by uploading it via Plugins > Add New
 4. Navigate to Downloads > Settings > Taxes and enable taxes
-5. Navigate to Downloads > Settings > Taxes > Tax Jar
+5. Navigate to Downloads > Settings > Taxes > TaxJar
 5. Enter your TaxJar API token
 
 == Notes ==
 
 In order for the tax rate calculation to occur, your checkout screen must include the billing zip / postal field. If that field is not present on your checkout screen, no tax rate determination can be performed.
 
-At this time this plugin only calculates the tax rate, it does not create order records in your TaxJar acccount, but we will add support for that soon. In the mean time, you can export your order history from Downloads > Reports > Export and then import it into TaxJar after the end of each month.
+At this time this plugin only calculates the tax rate; it does not create order records in your TaxJar account, but we will add support for that soon. In the meantime, you can export your order history from Downloads > Reports > Export and then import it into TaxJar after the end of each month.
 
 == Changelog ==
+
+= 1.0.2, March 23, 2021 =
+
+* New: Added filters for the zip code (`edd_tax_jar_zip`) and country (`edd_tax_jar_country`).
+* Fix: `edd_taxjar_data` payment meta not being saved as valid JSON.
+* Tweak: Update plugin author name and URI.
+* Dev: Support for EDD 3.0.
+* Dev: Code cleanup for WPCS.
 
 = 1.0.1, July 23, 2018 =
 
